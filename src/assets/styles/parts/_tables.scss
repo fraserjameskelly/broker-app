@@ -1,0 +1,66 @@
+.table-search {
+    @include media-breakpoint-up(lg) {
+        margin-left: auto;
+        width: 25%;
+    }
+}
+
+.filter-row {
+    & > div + div {
+        margin-top: 1rem;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+}
+
+.sort-button {
+    background: none;
+    border: none;
+    color: theme-color();
+    font-weight: bold;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.ASC {
+        &:after {
+            content: '\2bc5';
+        }
+    }
+
+    &.DESC {
+        &:after {
+            content: '\2bc6';
+        }
+    }
+}
+
+td {
+    &.id {
+        @include media-breakpoint-up(md) {
+            width: 10%;
+        }
+    }
+
+    &.actions {
+        @include media-breakpoint-up(md) {
+            width: 20%;
+        }
+
+        padding: 0.25em;
+
+        & > div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            a,
+            button {
+                margin: 0.5em;
+            }
+        }
+    }
+}

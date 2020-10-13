@@ -1,0 +1,9 @@
+.MuiButtonGroup-root {
+    margin: auto;
+}
+
+.MuiButton-textSecondary {
+    &:hover {
+        color: #FFF;
+    }
+}
