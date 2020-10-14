@@ -1,3 +1,13 @@
+# Getting Started
+
+Ensure that you have Node.js and npm installed. The project has been built using Node v12.18.3 and npm v6.14.6. I, personally, use yarn (v1.22.4) over npm.
+
+Run npm install (or yarn) at the root of the project to install all dependencies. After this, you should be ready to go.
+
+Please ensure that you have the broker-api project running locally on port 4000 before starting this application.
+
+## Additional
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
