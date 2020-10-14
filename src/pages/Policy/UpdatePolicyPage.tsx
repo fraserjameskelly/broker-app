@@ -188,6 +188,7 @@ export const UpdatePolicyPage = ({ match, history }: UpdatePolicyPageProps) => {
                                 });
                             }}
                         >
+                            
                             {insurers
                                 .sort((a, b) =>
                                     (a.id as number) > (b.id as number) ? 1 : -1

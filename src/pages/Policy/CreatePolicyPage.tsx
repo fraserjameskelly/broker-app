@@ -35,6 +35,9 @@ export const CreatePolicyPage = ({ match, history }: CreatePolicyPageProps) => {
             .get(getPolicyTypes)
             .then((response: AxiosResponse<PolicyType[]>) => {
                 setIsLoading(false);
+
+                console.log(response.data);
+
                 setPolicyTypes(response.data);
             })
             .catch((response: AxiosResponse) => {
@@ -65,6 +68,16 @@ export const CreatePolicyPage = ({ match, history }: CreatePolicyPageProps) => {
 
         if (0 >= parseFloat(policy.premium)) {
             setError('Please enter a valid number for the premium');
+            return;
+        }
+
+        if (0 === policy.policyType as number) {
+            setError('Please select a policy type');
+            return;
+        }
+
+        if (0 === policy.insurer as number) {
+            setError('Please select an insurer');
             return;
         }
 
@@ -141,6 +154,7 @@ export const CreatePolicyPage = ({ match, history }: CreatePolicyPageProps) => {
                         });
                     }}
                 >
+                    <option value="0">Select Policy Type</option>
                     {policyTypes
                         .sort((a, b) =>
                             (a.id as number) > (b.id as number) ? 1 : -1
@@ -166,6 +180,8 @@ export const CreatePolicyPage = ({ match, history }: CreatePolicyPageProps) => {
                         });
                     }}
                 >
+                    <option value="0">Select Insurer</option>
+
                     {insurers
                         .sort((a, b) =>
                             (a.id as number) > (b.id as number) ? 1 : -1
